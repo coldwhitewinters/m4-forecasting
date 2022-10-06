@@ -1,5 +1,5 @@
 import pandas as pd
-from m4.config import DATA_DIR
+from m4.config import paths
 
 
 def remove_trailing_nan(df):
@@ -53,7 +53,7 @@ def add_date_col(df):
 
 
 def prepare_data(df, filepath):
-    m4_info = pd.read_csv(DATA_DIR / "m4_info.csv")
+    m4_info = pd.read_csv(paths["data_dir_raw"] / "M4-info.csv")
     m4_info = parse_dates(m4_info)
 
     df.columns = pd.Index(["name"] + list(range(df.shape[1] - 1)))
@@ -61,7 +61,7 @@ def prepare_data(df, filepath):
     df["t"] = pd.to_numeric(df["t"])
     df = df.groupby("name").apply(remove_trailing_nan).reset_index(drop=True)
     df = df.merge(m4_info, left_on="name", right_on="M4id")
-    df = df.groupby("name").apply(add_date_col)
+    df = df.groupby("name", group_keys=False).apply(add_date_col)
     df = df[["name", "date", "t", "y", "category"]]
     df.to_csv(filepath, index=False)
     print(f"Data written to {filepath}")

@@ -1,0 +1,21 @@
+name: m4-forecasting
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - flake8
+  - scipy
+  - notebook
+  - statsmodels
+  - matplotlib
+  - pandas
+  - plotly
+  - lightgbm
+  - scikit-learn
+  - black
+  - ipywidgets
+  - jupyterlab
+  - seaborn
+  - numpy
+  - nodejs
+prefix: /home/ec2-user/anaconda3/envs/m4-forecasting

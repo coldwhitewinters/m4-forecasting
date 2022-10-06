@@ -1,20 +1,37 @@
-ROOT = "C:/Users/rep2rng/Desktop/home/projects/m4-forecasting"
-DATA_DIR = ROOT / "data"
-PROCESSED_DATA_DIR = DATA_DIR / "processed"
-BASE_DATA_DIR = PROCESSED_DATA_DIR / "base"
-FEATURES_DATA_DIR = PROCESSED_DATA_DIR / "features"
+from pathlib import Path
 
-DATASETS = [
-    'Daily-test.csv',
-    'Daily-train.csv',
-    'Hourly-test.csv',
-    'Hourly-train.csv',
-    'Monthly-test.csv',
-    'Monthly-train.csv',
-    'Quarterly-test.csv',
-    'Quarterly-train.csv',
-    'Weekly-test.csv',
-    'Weekly-train.csv',
-    'Yearly-test.csv',
-    'Yearly-train.csv'
+
+# Config
+# -----------------------------------------------------------------------------
+
+root = "/home/ec2-user/m4-forecasting"
+datasets = [
+    'Test/Hourly-test.csv',
+    'Test/Daily-test.csv',
+    'Test/Weekly-test.csv',
+    'Test/Monthly-test.csv',
+    'Test/Quarterly-test.csv',
+    'Test/Yearly-test.csv',
+    'Train/Hourly-train.csv',
+    'Train/Daily-train.csv',
+    'Train/Weekly-train.csv',
+    'Train/Monthly-train.csv',
+    'Train/Quarterly-train.csv',
+    'Train/Yearly-train.csv',
 ]
+settings = {
+    "unzip": True,
+    "prepare_data": True,
+}
+
+# -----------------------------------------------------------------------------
+
+root = Path(root)
+paths = {
+    "root": root,
+    "data_dir": root / "data",
+    "data_dir_raw": root / "data/raw",
+    "data_dir_processed": root / "data/processed",
+    "data_dir_base": root / "data/processed/base",
+    "data_dir_features": root / "data/processed/features",
+}
