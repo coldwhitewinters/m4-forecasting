@@ -3,19 +3,23 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - flake8
-  - scipy
-  - notebook
-  - statsmodels
-  - matplotlib
-  - pandas
-  - plotly
-  - lightgbm
-  - scikit-learn
   - black
+  - flake8
   - ipywidgets
   - jupyterlab
-  - seaborn
-  - numpy
+  - lightgbm
+  - matplotlib
   - nodejs
+  - notebook
+  - numpy
+  - pandas
+  - plotly
+  - r-base
+  - r-essentials
+  - r-jsonlite
+  - r-languageserver
+  - scikit-learn
+  - scipy
+  - seaborn
+  - statsmodels
 prefix: /home/ec2-user/anaconda3/envs/m4-forecasting
