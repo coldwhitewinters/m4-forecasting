@@ -155,3 +155,4 @@ cython_debug/
 data/
 .Rproj.user
 *.pem
+.Rhistory
